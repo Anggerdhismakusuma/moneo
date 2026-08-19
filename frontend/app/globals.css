@@ -3,24 +3,82 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  --sidebar: #ffffff;
+  --sidebar-foreground: #27272a;
+  --sidebar-muted: #71717a;
+
+  --sidebar-primary: #7fcf9a;
+  --sidebar-primary-foreground: #17351f;
+
+  --sidebar-accent: #eaf6ed;
+  --sidebar-accent-foreground: #247a3b;
+
+  --sidebar-border: #e7e5e4;
+  --sidebar-ring: #7fcf9a;
+
+  --sidebar-destructive: #b45353;
+  --sidebar-destructive-hover: #fef2f2;
+
+  --sidebar-hover: #f4f4f2;
+}
+
+.dark {
+  --background: #111412;
+  --foreground: #f4f4f2;
+
+  /* Sidebar */
+  --sidebar: #151916;
+  --sidebar-foreground: #f4f4f2;
+  --sidebar-muted: #a1a1aa;
+
+  --sidebar-primary: #9eddb0;
+  --sidebar-primary-foreground: #17351f;
+
+  --sidebar-accent: #1f3927;
+  --sidebar-accent-foreground: #bfe3c6;
+
+  --sidebar-border: #292e2b;
+  --sidebar-ring: #9eddb0;
+
+  --sidebar-destructive: #efaaaa;
+  --sidebar-destructive-hover: #3a2020;
+
+  --sidebar-hover: #202522;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-muted: var(--sidebar-muted);
+
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  --color-sidebar-destructive: var(--sidebar-destructive);
+  --color-sidebar-destructive-hover: var(--sidebar-destructive-hover);
+
+  --color-sidebar-hover: var(--sidebar-hover);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  * {
+    @apply border-sidebar-border;
   }
-}
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  body {
+    @apply bg-background text-foreground;
+  }
 }
